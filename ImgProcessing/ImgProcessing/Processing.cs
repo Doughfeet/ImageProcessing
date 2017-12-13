@@ -15,7 +15,7 @@ namespace ImgProcessing
         }
 
         static double lightenAmount = Form1.LightenAmount;
-    
+        static double darkenAmount = Form1.DarkenAmount;
 
         public static bool ConvertToGray(Bitmap bitmap)
         {
@@ -68,7 +68,6 @@ namespace ImgProcessing
             }
             return true;
         }
-
         public static Color LightenColor(Color inColor, double lightenAmount)
         {
             return Color.FromArgb(
@@ -76,6 +75,29 @@ namespace ImgProcessing
                 (int)Math.Min(255, inColor.R + 255 * lightenAmount),
                 (int)Math.Min(255, inColor.G + 255 * lightenAmount),
                 (int)Math.Min(255, inColor.B + 255 * lightenAmount));
+        }
+
+
+        public static bool DarkenImage(Bitmap bitmap)
+        {
+            for (int i = 0; i < bitmap.Width; i++)
+            {
+                for (int j = 0; j < bitmap.Height; j++)
+                {
+                    Color c1 = bitmap.GetPixel(i, j);
+                    var newColor = DarkenColor(c1, darkenAmount);
+                    bitmap.SetPixel(i, j, newColor);
+                }
+            }
+            return true;
+        }
+        public static Color DarkenColor(Color inColor, double darkenAmount)
+        {
+            return Color.FromArgb(
+                inColor.A,
+                (int)Math.Max(0, inColor.R - 255 * darkenAmount),
+                (int)Math.Max(0, inColor.G - 255 * darkenAmount),
+                (int)Math.Max(0, inColor.B - 255 * darkenAmount));
         }
     }
 }

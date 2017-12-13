@@ -18,8 +18,9 @@ namespace ImgProcessing
         }
 
         public static double LightenAmount { get; set; }
+        public static double DarkenAmount { get; set; }
 
-        
+
 
         private void BtnOpen_Click(object sender, EventArgs e)
         {
@@ -53,7 +54,41 @@ namespace ImgProcessing
 
         private void BtnLighten_Click(object sender, EventArgs e)
         {
+            Bitmap bitmapCopy = new Bitmap((Bitmap)pictureBoxOriginal.Image);
+
+            Processing.LightenImage(bitmapCopy);
+            this.pictureBoxResult.Image = bitmapCopy;
+        }
+
+        private void comboBoxLighten_TextChanged(object sender, EventArgs e)
+        {
+            if (comboBoxLighten.Text == "")
+            {
+                return;
+            }
+
             LightenAmount = double.Parse(comboBoxLighten.Text);
+
+            
+        }
+
+        private void BtnDarken_Click(object sender, EventArgs e)
+        {
+            Bitmap bitmapCopy = new Bitmap((Bitmap)pictureBoxOriginal.Image);
+
+            Processing.DarkenImage(bitmapCopy);
+            this.pictureBoxResult.Image = bitmapCopy;
+        }
+
+        private void comboBoxDarken_TextChanged(object sender, EventArgs e)
+        {
+            if (comboBoxDarken.Text == "")
+            {
+                return;
+            }
+
+            DarkenAmount = double.Parse(comboBoxDarken.Text);
         }
     }
+   
 }
