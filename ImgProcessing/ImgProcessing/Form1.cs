@@ -29,5 +29,22 @@ namespace ImgProcessing
 
             }
         }
+
+        private void BtnGray_Click(object sender, EventArgs e)
+        {
+            Bitmap bitmapCopy = new Bitmap((Bitmap)pictureBoxOriginal.Image);
+
+            Processing.ConvertToGray(bitmapCopy);
+            this.pictureBoxResult.Image = bitmapCopy;
+        }
+
+        private void BtnLGray_Click(object sender, EventArgs e)
+        {
+            Bitmap bitmapCopy = new Bitmap((Bitmap)pictureBoxOriginal.Image);
+
+            Processing.ToGrayScaleLuminosity(bitmapCopy);
+            this.pictureBoxResult.Image = bitmapCopy;
+
+        }
     }
 }
