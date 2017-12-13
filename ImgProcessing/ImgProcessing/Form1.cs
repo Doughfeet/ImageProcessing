@@ -17,6 +17,17 @@ namespace ImgProcessing
             InitializeComponent();
         }
 
+        private void BtnOpen_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
 
+            openFileDialog.Filter = "Image File (*.bmp, *.jpg)|*.bmp;*.jpg";
+
+            if (DialogResult.OK == openFileDialog.ShowDialog())
+            {
+                this.pictureBoxOriginal.Image = new Bitmap(openFileDialog.FileName);
+
+            }
+        }
     }
 }
