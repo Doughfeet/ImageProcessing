@@ -28,12 +28,72 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.pictureBoxResult = new System.Windows.Forms.PictureBox();
+            this.pictureBoxOriginal = new System.Windows.Forms.PictureBox();
+            this.BtnOpen = new System.Windows.Forms.Button();
+            this.BtnGray = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxResult)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOriginal)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // pictureBoxResult
+            // 
+            this.pictureBoxResult.Location = new System.Drawing.Point(848, 50);
+            this.pictureBoxResult.Name = "pictureBoxResult";
+            this.pictureBoxResult.Size = new System.Drawing.Size(553, 451);
+            this.pictureBoxResult.TabIndex = 0;
+            this.pictureBoxResult.TabStop = false;
+            // 
+            // pictureBoxOriginal
+            // 
+            this.pictureBoxOriginal.Location = new System.Drawing.Point(87, 50);
+            this.pictureBoxOriginal.Name = "pictureBoxOriginal";
+            this.pictureBoxOriginal.Size = new System.Drawing.Size(553, 451);
+            this.pictureBoxOriginal.TabIndex = 0;
+            this.pictureBoxOriginal.TabStop = false;
+            // 
+            // BtnOpen
+            // 
+            this.BtnOpen.Location = new System.Drawing.Point(87, 546);
+            this.BtnOpen.Name = "BtnOpen";
+            this.BtnOpen.Size = new System.Drawing.Size(212, 72);
+            this.BtnOpen.TabIndex = 1;
+            this.BtnOpen.Text = "Open";
+            this.BtnOpen.UseVisualStyleBackColor = true;
+            this.BtnOpen.Click += new System.EventHandler(this.BtnOpen_Click);
+            // 
+            // BtnGray
+            // 
+            this.BtnGray.Location = new System.Drawing.Point(848, 546);
+            this.BtnGray.Name = "BtnGray";
+            this.BtnGray.Size = new System.Drawing.Size(212, 72);
+            this.BtnGray.TabIndex = 1;
+            this.BtnGray.Text = "Gray";
+            this.BtnGray.UseVisualStyleBackColor = true;
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(1483, 690);
+            this.Controls.Add(this.BtnGray);
+            this.Controls.Add(this.BtnOpen);
+            this.Controls.Add(this.pictureBoxOriginal);
+            this.Controls.Add(this.pictureBoxResult);
+            this.Name = "Form1";
+            this.Text = "Image Processing";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxResult)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOriginal)).EndInit();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.PictureBox pictureBoxResult;
+        private System.Windows.Forms.PictureBox pictureBoxOriginal;
+        private System.Windows.Forms.Button BtnOpen;
+        private System.Windows.Forms.Button BtnGray;
     }
 }
 
