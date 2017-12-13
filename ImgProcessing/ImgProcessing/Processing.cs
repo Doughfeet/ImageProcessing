@@ -14,6 +14,9 @@ namespace ImgProcessing
 
         }
 
+        static double lightenAmount = Form1.LightenAmount;
+    
+
         public static bool ConvertToGray(Bitmap bitmap)
         {
             for (int i = 0; i < bitmap.Width; i++)
@@ -49,6 +52,30 @@ namespace ImgProcessing
                 }
             }
             return true;
+        }
+
+        
+        public static bool LightenImage(Bitmap bitmap)
+        {
+            for (int i = 0; i < bitmap.Width; i++)
+            {
+                for (int j = 0; j < bitmap.Height; j++)
+                {
+                    Color c1 = bitmap.GetPixel(i, j);
+                    var newColor = LightenColor(c1, lightenAmount);
+                    bitmap.SetPixel(i, j, newColor);
+                }
+            }
+            return true;
+        }
+
+        public static Color LightenColor(Color inColor, double lightenAmount)
+        {
+            return Color.FromArgb(
+                inColor.A,
+                (int)Math.Min(255, inColor.R + 255 * lightenAmount),
+                (int)Math.Min(255, inColor.G + 255 * lightenAmount),
+                (int)Math.Min(255, inColor.B + 255 * lightenAmount));
         }
     }
 }

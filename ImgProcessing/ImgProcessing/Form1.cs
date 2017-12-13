@@ -17,6 +17,10 @@ namespace ImgProcessing
             InitializeComponent();
         }
 
+        public static double LightenAmount { get; set; }
+
+        
+
         private void BtnOpen_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -45,6 +49,11 @@ namespace ImgProcessing
             Processing.ToGrayScaleLuminosity(bitmapCopy);
             this.pictureBoxResult.Image = bitmapCopy;
 
+        }
+
+        private void BtnLighten_Click(object sender, EventArgs e)
+        {
+            LightenAmount = double.Parse(comboBoxLighten.Text);
         }
     }
 }
