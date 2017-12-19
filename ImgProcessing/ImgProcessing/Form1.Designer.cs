@@ -40,8 +40,10 @@
             this.comboBoxDarken = new System.Windows.Forms.ComboBox();
             this.BtnNegative = new System.Windows.Forms.Button();
             this.BtnBlur = new System.Windows.Forms.Button();
+            this.TrackbarBlur = new System.Windows.Forms.TrackBar();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxResult)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOriginal)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TrackbarBlur)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBoxResult
@@ -184,11 +186,21 @@
             this.BtnBlur.UseVisualStyleBackColor = true;
             this.BtnBlur.Click += new System.EventHandler(this.BtnBlur_Click);
             // 
+            // TrackbarBlur
+            // 
+            this.TrackbarBlur.Location = new System.Drawing.Point(849, 1017);
+            this.TrackbarBlur.Name = "TrackbarBlur";
+            this.TrackbarBlur.Size = new System.Drawing.Size(148, 90);
+            this.TrackbarBlur.TabIndex = 5;
+            this.TrackbarBlur.Value = 1;
+            this.TrackbarBlur.Scroll += new System.EventHandler(this.UpdateBlur);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1667, 1219);
+            this.Controls.Add(this.TrackbarBlur);
             this.Controls.Add(this.comboBoxDarken);
             this.Controls.Add(this.BtnDarken);
             this.Controls.Add(this.comboBoxLighten);
@@ -205,6 +217,7 @@
             this.Text = "Image Processing";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxResult)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOriginal)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TrackbarBlur)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -224,6 +237,7 @@
         private System.Windows.Forms.ComboBox comboBoxDarken;
         private System.Windows.Forms.Button BtnNegative;
         private System.Windows.Forms.Button BtnBlur;
+        private System.Windows.Forms.TrackBar TrackbarBlur;
     }
 }
 

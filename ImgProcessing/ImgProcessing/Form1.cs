@@ -103,6 +103,13 @@ namespace ImgProcessing
             Processing.Blur(copy);
             this.pictureBoxResult.Image = copy;
         }
+
+        public static int blurAmount = 1;
+        private void UpdateBlur(object sender, EventArgs e)
+        {
+            blurAmount = TrackbarBlur.Value;
+
+        }
     }
    
 }

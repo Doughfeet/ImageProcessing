@@ -16,6 +16,7 @@ namespace ImgProcessing
 
         static double lightenAmount = Form1.LightenAmount;
         static double darkenAmount = Form1.DarkenAmount;
+        static int blurAmount = Form1.blurAmount;
 
         public static bool ConvertToGray(Bitmap bitmap)
         {
@@ -122,16 +123,16 @@ namespace ImgProcessing
 
         public static bool Blur(Bitmap bitmap)
         {
-            for (int i = 0; i < bitmap.Width; i++)
+            for (int i = blurAmount; i < bitmap.Width - blurAmount; i++)
             {
-                for (int j = 0; j < bitmap.Height; j++)
+                for (int j =blurAmount; j < bitmap.Height - blurAmount; j++)
                 {
                     try
                     {
-                        Color prevX = bitmap.GetPixel(i - 1, j);
-                        Color nextX = bitmap.GetPixel(i + 1, j);
-                        Color prevY = bitmap.GetPixel(i, j - 1);
-                        Color nextY = bitmap.GetPixel(i, j + 1);
+                        Color prevX = bitmap.GetPixel(i - blurAmount, j);
+                        Color nextX = bitmap.GetPixel(i + blurAmount, j);
+                        Color prevY = bitmap.GetPixel(i, j - blurAmount);
+                        Color nextY = bitmap.GetPixel(i, j + blurAmount);
 
                         int avgR = (int)((prevX.R + nextX.R + prevY.R + nextY.R) / 4);
                         int avgG = (int)((prevX.G + nextX.G + prevY.G + nextY.G) / 4);
