@@ -96,6 +96,13 @@ namespace ImgProcessing
             Processing.ConvertToNegative(copy);
             this.pictureBoxResult.Image = copy;
         }
+
+        private void BtnBlur_Click(object sender, EventArgs e)
+        {
+            Bitmap copy = new Bitmap((Bitmap)this.pictureBoxOriginal.Image);
+            Processing.Blur(copy);
+            this.pictureBoxResult.Image = copy;
+        }
     }
    
 }

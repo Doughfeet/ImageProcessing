@@ -39,6 +39,7 @@
             this.BtnDarken = new System.Windows.Forms.Button();
             this.comboBoxDarken = new System.Windows.Forms.ComboBox();
             this.BtnNegative = new System.Windows.Forms.Button();
+            this.BtnBlur = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxResult)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOriginal)).BeginInit();
             this.SuspendLayout();
@@ -173,6 +174,16 @@
             this.BtnNegative.UseVisualStyleBackColor = true;
             this.BtnNegative.Click += new System.EventHandler(this.BtnNegative_Click);
             // 
+            // BtnBlur
+            // 
+            this.BtnBlur.Location = new System.Drawing.Point(849, 889);
+            this.BtnBlur.Name = "BtnBlur";
+            this.BtnBlur.Size = new System.Drawing.Size(148, 122);
+            this.BtnBlur.TabIndex = 1;
+            this.BtnBlur.Text = "Blur";
+            this.BtnBlur.UseVisualStyleBackColor = true;
+            this.BtnBlur.Click += new System.EventHandler(this.BtnBlur_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -185,6 +196,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.BtnLGray);
             this.Controls.Add(this.BtnNegative);
+            this.Controls.Add(this.BtnBlur);
             this.Controls.Add(this.BtnGray);
             this.Controls.Add(this.BtnOpen);
             this.Controls.Add(this.pictureBoxOriginal);
@@ -211,6 +223,7 @@
         private System.Windows.Forms.Button BtnDarken;
         private System.Windows.Forms.ComboBox comboBoxDarken;
         private System.Windows.Forms.Button BtnNegative;
+        private System.Windows.Forms.Button BtnBlur;
     }
 }
 

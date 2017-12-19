@@ -37,7 +37,21 @@ namespace ImgProcessing
             }
             return true;
         }
-
+        public static bool ToGrayScaleLuminosity(Bitmap bitmap)
+        {
+            for (int i = 0; i < bitmap.Width; i++)
+            {
+                for (int j = 0; j < bitmap.Height; j++)
+                {
+                    Color c1 = bitmap.GetPixel(i, j);
+                    var luminosity = ((0.21 * c1.R) + (0.72 * c1.G) + (0.07 * c1.B)) / 3;
+                    var c = Convert.ToInt32(luminosity);
+                    var newColor = Color.FromArgb(255, c, c, c);
+                    bitmap.SetPixel(i, j, newColor);
+                }
+            }
+            return true;
+        }
         public static bool ConvertToNegative(Bitmap bitmap)
         {
             for (int i = 0; i < bitmap.Width; i++)
@@ -61,23 +75,6 @@ namespace ImgProcessing
         }
 
 
-        public static bool ToGrayScaleLuminosity(Bitmap bitmap)
-        {
-            for (int i = 0; i < bitmap.Width; i++)
-            {
-                for (int j = 0; j < bitmap.Height; j++)
-                {
-                    Color c1 = bitmap.GetPixel(i, j);
-                    var luminosity = ((0.21 * c1.R) + (0.72 * c1.G) + (0.07 * c1.B)) / 3;
-                    var c = Convert.ToInt32(luminosity);
-                    var newColor = Color.FromArgb(255, c, c, c);
-                    bitmap.SetPixel(i, j, newColor);
-                }
-            }
-            return true;
-        }
-
-        
         public static bool LightenImage(Bitmap bitmap)
         {
             for (int i = 0; i < bitmap.Width; i++)
@@ -121,6 +118,35 @@ namespace ImgProcessing
                 (int)Math.Max(0, inColor.R - 255 * darkenAmount),
                 (int)Math.Max(0, inColor.G - 255 * darkenAmount),
                 (int)Math.Max(0, inColor.B - 255 * darkenAmount));
+        }
+
+        public static bool Blur(Bitmap bitmap)
+        {
+            for (int i = 0; i < bitmap.Width; i++)
+            {
+                for (int j = 0; j < bitmap.Height; j++)
+                {
+                    try
+                    {
+                        Color prevX = bitmap.GetPixel(i - 1, j);
+                        Color nextX = bitmap.GetPixel(i + 1, j);
+                        Color prevY = bitmap.GetPixel(i, j - 1);
+                        Color nextY = bitmap.GetPixel(i, j + 1);
+
+                        int avgR = (int)((prevX.R + nextX.R + prevY.R + nextY.R) / 4);
+                        int avgG = (int)((prevX.G + nextX.G + prevY.G + nextY.G) / 4);
+                        int avgB = (int)((prevX.B + nextX.B + prevY.B + nextY.B) / 4);
+
+                        bitmap.SetPixel(i, j, Color.FromArgb(avgR, avgG, avgB));
+
+                    }
+                    catch (Exception)
+                    {
+                    }
+                }
+            }
+            return true;
+
         }
     }
 }
