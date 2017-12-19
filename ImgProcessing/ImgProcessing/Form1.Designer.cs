@@ -38,6 +38,7 @@
             this.comboBoxLighten = new System.Windows.Forms.ComboBox();
             this.BtnDarken = new System.Windows.Forms.Button();
             this.comboBoxDarken = new System.Windows.Forms.ComboBox();
+            this.BtnNegative = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxResult)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOriginal)).BeginInit();
             this.SuspendLayout();
@@ -80,7 +81,7 @@
             // 
             // BtnLGray
             // 
-            this.BtnLGray.Location = new System.Drawing.Point(1014, 749);
+            this.BtnLGray.Location = new System.Drawing.Point(1162, 749);
             this.BtnLGray.Name = "BtnLGray";
             this.BtnLGray.Size = new System.Drawing.Size(148, 122);
             this.BtnLGray.TabIndex = 1;
@@ -100,7 +101,7 @@
             // 
             // BtnLighten
             // 
-            this.BtnLighten.Location = new System.Drawing.Point(1179, 749);
+            this.BtnLighten.Location = new System.Drawing.Point(1327, 749);
             this.BtnLighten.Name = "BtnLighten";
             this.BtnLighten.Size = new System.Drawing.Size(148, 83);
             this.BtnLighten.TabIndex = 3;
@@ -124,7 +125,7 @@
             "0,8",
             "0,9",
             "1"});
-            this.comboBoxLighten.Location = new System.Drawing.Point(1179, 838);
+            this.comboBoxLighten.Location = new System.Drawing.Point(1327, 838);
             this.comboBoxLighten.Name = "comboBoxLighten";
             this.comboBoxLighten.Size = new System.Drawing.Size(148, 33);
             this.comboBoxLighten.TabIndex = 4;
@@ -132,7 +133,7 @@
             // 
             // BtnDarken
             // 
-            this.BtnDarken.Location = new System.Drawing.Point(1353, 749);
+            this.BtnDarken.Location = new System.Drawing.Point(1501, 749);
             this.BtnDarken.Name = "BtnDarken";
             this.BtnDarken.Size = new System.Drawing.Size(148, 83);
             this.BtnDarken.TabIndex = 3;
@@ -156,11 +157,21 @@
             "0,8",
             "0,9",
             "1"});
-            this.comboBoxDarken.Location = new System.Drawing.Point(1353, 838);
+            this.comboBoxDarken.Location = new System.Drawing.Point(1501, 838);
             this.comboBoxDarken.Name = "comboBoxDarken";
             this.comboBoxDarken.Size = new System.Drawing.Size(148, 33);
             this.comboBoxDarken.TabIndex = 4;
             this.comboBoxDarken.TextChanged += new System.EventHandler(this.comboBoxDarken_TextChanged);
+            // 
+            // BtnNegative
+            // 
+            this.BtnNegative.Location = new System.Drawing.Point(1003, 749);
+            this.BtnNegative.Name = "BtnNegative";
+            this.BtnNegative.Size = new System.Drawing.Size(148, 122);
+            this.BtnNegative.TabIndex = 1;
+            this.BtnNegative.Text = "Negative";
+            this.BtnNegative.UseVisualStyleBackColor = true;
+            this.BtnNegative.Click += new System.EventHandler(this.BtnNegative_Click);
             // 
             // Form1
             // 
@@ -173,6 +184,7 @@
             this.Controls.Add(this.BtnLighten);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.BtnLGray);
+            this.Controls.Add(this.BtnNegative);
             this.Controls.Add(this.BtnGray);
             this.Controls.Add(this.BtnOpen);
             this.Controls.Add(this.pictureBoxOriginal);
@@ -198,6 +210,7 @@
         private System.Windows.Forms.ComboBox comboBoxLighten;
         private System.Windows.Forms.Button BtnDarken;
         private System.Windows.Forms.ComboBox comboBoxDarken;
+        private System.Windows.Forms.Button BtnNegative;
     }
 }
 

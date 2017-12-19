@@ -89,6 +89,11 @@ namespace ImgProcessing
 
             DarkenAmount = double.Parse(comboBoxDarken.Text);
         }
+
+        private void BtnNegative_Click(object sender, EventArgs e)
+        {
+
+        }
     }
    
 }
