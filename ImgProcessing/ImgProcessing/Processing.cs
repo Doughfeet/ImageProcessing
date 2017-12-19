@@ -38,6 +38,29 @@ namespace ImgProcessing
             return true;
         }
 
+        public static bool ConvertToNegative(Bitmap bitmap)
+        {
+            for (int i = 0; i < bitmap.Width; i++)
+            {
+                for (int j = 0; j < bitmap.Height; j++)
+                {
+                    Color c1 = bitmap.GetPixel(i, j); // get Pixel from color
+                    int a = c1.A; //extraction ARGB from pixel color
+                    int r1 = c1.R;
+                    int g1 = c1.G;
+                    int b1 = c1.B;
+                    // For negative value
+
+                    r1 = 255 - r1;
+                    g1 = 255 - g1;
+                    b1 = 255 - b1;
+                    bitmap.SetPixel(i, j, Color.FromArgb(a, r1, g1, b1)); // setting new color for negative processed image
+                }
+            }
+            return true;
+        }
+
+
         public static bool ToGrayScaleLuminosity(Bitmap bitmap)
         {
             for (int i = 0; i < bitmap.Width; i++)

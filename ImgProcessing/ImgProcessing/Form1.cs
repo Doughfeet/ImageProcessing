@@ -92,7 +92,9 @@ namespace ImgProcessing
 
         private void BtnNegative_Click(object sender, EventArgs e)
         {
-
+            Bitmap copy = new Bitmap((Bitmap)this.pictureBoxOriginal.Image);
+            Processing.ConvertToNegative(copy);
+            this.pictureBoxResult.Image = copy;
         }
     }
    
